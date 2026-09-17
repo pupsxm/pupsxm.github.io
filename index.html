@@ -1,1 +1,217 @@
+<html lang="ru">
 
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задание 1 — гиперссылки и форма</title>
+  </head>
+
+  <body>
+
+    <h1>Задание 1. Гиперссылки и форма</h1>
+
+    <p>
+      Маркированный список гиперссылок.
+    </p>
+    <ul>
+
+      <li>
+        <a href="http://kubsu.ru/">КубГУ (абсолютная, http)</a>
+      </li>
+
+      <li>
+        <a href="https://kubsu.ru/">КубГУ (абсолютная, https)</a>
+      </li>
+
+      <li>
+        <a href="https://kubsu.ru/">
+          <img src="file:///C:/Users/Валентина/Pictures/Логотип_КубГУ.png" width="200" height="150" />
+        </a>
+      </li>
+
+      <li>
+        <a href="/studlife">Сокращённая ссылка на внутреннюю страницу</a>
+      </li>
+
+      <li>
+        <a href="/">Сокращённая ссылка на главную страницу</a>
+      </li>
+
+      <li>
+        <a href="#form">Ссылка на фрагмент текущей страницы (форма)</a>
+      </li>
+
+      <!-- 7. ссылка с тремя параметрами в URL -->
+      <li>
+        <a href="https://kubsu.ru/?param1=one&amp;param2=two&amp;param3=three">
+          Ссылка с тремя параметрами в URL
+        </a>
+      </li>
+
+      <li>
+        <a href="https://kubsu.ru/?id=42">Ссылка с параметром id в URL</a>
+      </li>
+
+      <li>
+        <a href="news.html">Относительная на страницу в текущем каталоге</a>
+      </li>
+
+      <li>
+        <a href="about/news.html">Относительная на страницу в каталоге about</a>
+      </li>
+
+      <li>
+        <a href="../news.html">Относительная на страницу в каталоге уровнем выше</a>
+      </li>
+
+      <li>
+        <a href="../../news.html">Относительная на страницу в каталоге двумя уровнями выше</a>
+      </li>
+
+      <li>
+        <p>
+          Абитуриентам для поступления в <a href="https://kubsu.ru/ru/abiturient">Кубанский государственный университет</a>
+        </p>
+      </li>
+
+      <li>
+        <a href="https://habr.com/ru/feed/#habrac">
+          Ссылка на фрагмент страницы стороннего сайта
+        </a>
+      </li>
+
+      <li>
+        <p>Ссылки из областей картинки (тег map):</p>
+
+        <img src="C:\Users\Валентина\Documents\GitHub\pupsxm.github.io\split.png"
+             alt="Картинка с картой ссылок"
+             usemap="#mymap"
+             width="300" height="150" />
+
+        <map name="mymap">
+          <area shape="rect" coords="0,0,150,150"
+                href="https://kubsu.ru/" alt="Прямоугольная область" />
+          <area shape="circle" coords="225,75,70"
+                href="https://ru.wikipedia.org/" alt="Круглая область" />
+        </map>
+      </li>
+
+      <li>
+        <a href="">Ссылка с пустым href</a>
+      </li>
+
+      <li>
+        <a>Ссылка без href</a>
+      </li>
+
+      <li>
+        <a href="https://kubsu.ru/" rel="nofollow">
+          Зпрет перехода поисковикам
+        </a>
+      </li>
+
+      <li>
+        <a href="https://kubsu.ru/" rel="noindex">
+          Запрет индексации
+        </a>
+      </li>
+
+      <li>
+        <p>Нумерованный список ссылок с title:</p>
+        <ol>
+          <li><a href="https://kubsu.ru/" title="Главная страница КубГУ">КубГУ</a></li>
+          <li><a href="https://kubsu.ru/ru/education" title="Образование в КубГУ">Образование</a></li>
+          <li><a href="https://kubsu.ru/ru/science" title="Наука в КубГУ">Наука</a></li>
+        </ol>
+      </li>
+
+      <li>
+        <a href="ftp://user:password@example.com/myfile.zip">
+          Ссылка на файл на FTP-сервере с авторизацией
+        </a>
+      </li>
+
+    </ul>
+
+
+    <h2 id="form">Форма</h2>
+
+    <form action="/"
+          method="POST">
+
+      <label>
+        ФИО:<br />
+        <input name="fio"
+               placeholder="Иванов Иван Иванович"
+               required="required" />
+      </label><br />
+
+      <label>
+        Телефон:<br />
+        <input name="phone"
+               type="tel"
+               placeholder="+7 (999) 123-45-67"
+               required="required" />
+      </label><br />
+
+      <label>
+        E-mail:<br />
+        <input name="email"
+               type="email"
+               placeholder="student@example.com"
+               required="required" />
+      </label><br />
+
+      <label>
+        Дата рождения:<br />
+        <input name="birthdate"
+               type="date"
+               value="2007-08-29" />
+      </label><br />
+
+      Пол:<br />
+      <label><input type="radio"
+                    name="gender"
+                    value="male"
+                    checked="checked" />
+        Мужской</label>
+      <label><input type="radio"
+                    name="gender"
+                    value="female" />
+        Женский</label><br />
+
+      <label>
+        Любимый язык программирования:<br />
+        <select name="langs[]"
+                multiple="multiple"
+                size="7">
+          <option value="Pascal">Pascal</option>
+          <option value="C">C</option>
+          <option value="C++">C++</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="PHP">PHP</option>
+          <option value="Python" selected="selected">Python</option>
+          <option value="Java">Java</option>
+        </select>
+      </label><br />
+
+      <label>
+        Биография:<br />
+        <textarea name="bio"
+                  placeholder="Расскажите о себе">Студент КубГУ, ФКТиПМ.</textarea>
+      </label><br />
+
+      <label>
+        <input type="checkbox"
+               name="agree"
+               checked="checked"
+               required="required" />
+        С контрактом ознакомлен (а)
+      </label><br />
+
+      <input type="submit" value="Сохранить" />
+
+    </form>
+
+  </body>
+
+</html>
