@@ -2,12 +2,34 @@
 
   <head>
     <meta charset="UTF-8" />
-    <title>Задание 1 — гиперссылки и форма</title>
+    <title>Задание 2 — Таблицы</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
 
-    <h1>Задание 1. Гиперссылки и форма</h1>
+    <header id="header">
+  <div class="container header-inner">
+
+    <nav id="main-nav">
+      <a href="#">Ссылка меню 1</a>
+      <a href="#">Ссылка 2</a>
+      <a href="#">Ссылка 3</a>
+    </nav>
+
+    <div class="header-row">
+      <img id="logo" src="C:\Users\Валентина\Documents\GitHub\pupsxm.github.io\image.png"
+           alt="Логотип сайта" width="100" height="100" />
+      <h1 id="site-title">Название сайта</h1>
+    </div>
+
+  </div>
+</header>
+
+    <main>
+
+      <section class="container" id="links">
+      <h2>Задание 1. Гиперссылки и форма</h2>
 
     <p>
       Маркированный список гиперссылок.
@@ -131,8 +153,59 @@
       </li>
 
     </ul>
+  </section>
+
+  <section class="container" id="table-section">
+        <h2>Таблица</h2>
+
+        <table id="data-table">
+          <tr>
+            <th>№</th>
+            <th>ФИО</th>
+            <th>Группа</th>
+            <th>Курс</th>
+            <th>Средний балл</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Иванов Иван Иванович</td>
+            <td>ЗК14</td>
+            <td>1</td>
+            <td>4.5</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Петров Пётр Петрович</td>
+            <td>МА16</td>
+            <td>1</td>
+            <td>4.2</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Сидоров Сидор Сидорович</td>
+            <td>ВС23</td>
+            <td>2</td>
+            <td>4.8</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Сергеев Сергей Сергеевич</td>
+            <td>РП21</td>
+            <td>2</td>
+            <td>5.0</td>
+          </tr>
+          <tr>
+            <td colspan="4">Средний балл по всем группам</td>
+            <td>4.6</td>
+          </tr>
+          <tr>
+            <td colspan="5">Итого: 4 студента, средний балл 4.6</td>
+          </tr>
+        </table>
+      </section>
 
 
+      <section class="container" id="form">
     <h2 id="form">Форма</h2>
 
     <form action="/"
@@ -149,7 +222,7 @@
         Телефон:<br />
         <input name="phone"
                type="tel"
-               placeholder="+7 (999) 123-45-67"
+               placeholder="+7 (906) 123-45-67"
                required="required" />
       </label><br />
 
@@ -211,7 +284,18 @@
       <input type="submit" value="Сохранить" />
 
     </form>
+    </section>
+    </main>
+
+    <footer id="footer">
+      <div class="container">
+        (с) Сергей Синица
+      </div>
+    </footer>
 
   </body>
+  
+     
+
 
 </html>
