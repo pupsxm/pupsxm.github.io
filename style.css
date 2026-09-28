@@ -15,7 +15,7 @@ body {
 }
 
 /* =========================================================
-   ПРАВИЛА ДЛЯ МОБИЛЬНЫХ (по умолчанию, Mobile First)
+   МОБИЛЬНЫЕ (по умолчанию, Mobile First)
    ========================================================= */
 
 /* --- Шапка на всю ширину --- */
@@ -46,7 +46,7 @@ body {
     color: #fff;
 }
 
-/* --- Меню: на мобильном вертикальный список --- */
+/* --- Меню: вертикальный список --- */
 #main-nav {
     width: 100%;
     background-color: #4a7fb0;
@@ -70,20 +70,20 @@ body {
     text-decoration: underline;
 }
 
-/* --- Контейнер контента: на мобильном во всю ширину --- */
+/* --- Контейнер на всю ширину --- */
 .container {
     width: 100%;
     padding: 15px;
 }
 
-/* --- Контент: колонка, таблица выше списка через order --- */
+/* --- Контент: колонка + order для таблицы --- */
 #content {
     display: flex;
     flex-direction: column;
 }
 
-#links {
-    order: 2;
+#table-section {
+    order: 1;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -91,8 +91,8 @@ body {
     padding: 15px;
 }
 
-#table-section {
-    order: 1;
+#links {
+    order: 2;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -187,7 +187,7 @@ tr:nth-child(odd) {
 
 @media screen and (min-width: 800px) {
 
-    /* Шапка: лого и название в одну строку, контейнер 960px */
+    /* Шапка: лого и название, контейнер 960px */
     .header-inner {
         max-width: 960px;
         margin: 0 auto;
@@ -225,7 +225,7 @@ tr:nth-child(odd) {
         padding: 20px;
     }
 
-    /* Возвращаем обычный порядок блоков */
+    /* Секции в исходном порядке HTML */
     #content {
         display: block;
     }
