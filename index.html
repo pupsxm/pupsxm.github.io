@@ -10,6 +10,7 @@
           rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <script src="calc.js" defer></script>
 </head>
 
 <body>
@@ -376,6 +377,47 @@
                 </div>
             </div>
         </section>
+
+        <section id="calculator" class="mt-4">
+    <div class="card">
+        <div class="card-body">
+
+            <h2 class="h4 card-title">Калькулятор стоимости заказа</h2>
+
+            <form id="calc-form" novalidate>
+
+                <div class="mb-3">
+                    <label for="calc-product" class="form-label">Товар:</label>
+                    <select class="form-select" id="calc-product" name="product">
+                        <option value="1500">Клавиатура — 1500 ₽</option>
+                        <option value="800">Мышь — 800 ₽</option>
+                        <option value="12000">Монитор — 12000 ₽</option>
+                        <option value="300">Коврик для мыши — 300 ₽</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="calc-quantity" class="form-label">Количество:</label>
+                    <input type="text"
+                           class="form-control"
+                           id="calc-quantity"
+                           name="quantity"
+                           placeholder="Введите целое число"
+                           value="1">
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="calc-button">
+                    Посчитать стоимость
+                </button>
+
+            </form>
+
+            <div id="calc-result" class="mt-3 fw-bold"></div>
+            <div id="calc-error" class="mt-2 text-danger"></div>
+
+        </div>
+    </div>
+</section>
 
     </main>
 

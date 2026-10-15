@@ -1,0 +1,39 @@
+window.addEventListener('DOMContentLoaded', function () {
+
+    var form = document.getElementById('calc-form');
+    var productField = document.getElementById('calc-product');
+    var quantityField = document.getElementById('calc-quantity');
+    var resultBox = document.getElementById('calc-result');
+    var errorBox = document.getElementById('calc-error');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        calculate();
+    });
+
+    function calculate() {
+
+        resultBox.innerHTML = '';
+        errorBox.innerHTML = '';
+
+        var quantity = quantityField.value;
+
+        if (!/^\d+$/.test(quantity)) {
+            errorBox.innerHTML = 'Введите целое положительное число без букв и знаков.';
+            return;
+        }
+
+        var price = parseInt(productField.value, 10);
+        var count = parseInt(quantity, 10);
+
+        if (count <= 0) {
+            errorBox.innerHTML = 'Количество должно быть больше нуля.';
+            return;
+        }
+
+        var total = price * count;
+
+        resultBox.innerHTML = 'Стоимость заказа: ' + total + ' ₽';
+    }
+
+});
