@@ -21,39 +21,38 @@ window.addEventListener('DOMContentLoaded', function () {
     var resultBox = document.getElementById('c6-result');
 
     // Функция пересчета стоимости
-    function calculatePrice() {
-        var quantity = parseInt(inputQuantity.value, 10);
-        var selectedProduct;
-        var basePrice;
-        var extraOptionPrice = 0;
-        var extraPropertyPrice = 0;
-        var total;
+function calculatePrice() {
+    var quantity = parseInt(inputQuantity.value, 10);
+    var quantityError = document.getElementById('c6-quantity-error');
+    var selectedProduct;
+    var basePrice;
+    var extraOptionPrice = 0;
+    var extraPropertyPrice = 0;
+    var total;
 
-        // Защита от пустого значения или NaN
-        if (isNaN(quantity) || quantity < 1) {
-            quantity = 1;
-        }
+    quantityError.innerHTML = '';
 
-        // Получаем выбранный тип товара
-        selectedProduct = document.querySelector('input[name="c6-product"]:checked').value;
-        basePrice = BASE_PRICES[selectedProduct];
-
-        // Если выбран Товар 2, берем цену опции из селекта
-        if (selectedProduct === 'p2') {
-            extraOptionPrice = parseInt(inputOptions.value, 10);
-        }
-
-        // Если выбран Товар 3 и стоит галочка, добавляем цену свойства
-        if (selectedProduct === 'p3' && inputProperty.checked) {
-            extraPropertyPrice = 300;
-        }
-
-        // Считаем итог: (База + Опция + Свойство) * Количество
-        total = (basePrice + extraOptionPrice + extraPropertyPrice) * quantity;
-
-        // Выводим результат на страницу
-        resultBox.innerHTML = 'Итоговая стоимость: ' + total + ' ₽';
+    // Защита от пустого значения, нуля и отрицательного
+    if (isNaN(quantity) || quantity < 1) {
+        quantityError.innerHTML = 'Количество должно быть целым числом от 1.';
+        resultBox.innerHTML = 'Итоговая стоимость: —';
+        return;
     }
+
+    selectedProduct = document.querySelector('input[name="c6-product"]:checked').value;
+    basePrice = BASE_PRICES[selectedProduct];
+
+    if (selectedProduct === 'p2') {
+        extraOptionPrice = parseInt(inputOptions.value, 10);
+    }
+
+    if (selectedProduct === 'p3' && inputProperty.checked) {
+        extraPropertyPrice = 300;
+    }
+
+    total = (basePrice + extraOptionPrice + extraPropertyPrice) * quantity;
+    resultBox.innerHTML = 'Итоговая стоимость: ' + total + ' ₽';
+}
 
     // Функция для управления видимостью селекта и чекбокса
     function updateFormVisibility() {
