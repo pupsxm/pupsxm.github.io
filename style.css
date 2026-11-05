@@ -106,3 +106,69 @@ body {
     justify-content: center;
     z-index: 10; /* Чтобы стрелки всегда были поверх картинок */
 }
+
+/* =========================================================
+   Стили для Попапа (Задание 8)
+   ========================================================= */
+.custom-modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+}
+
+/* Когда добавляется класс active, попап показывается */
+.custom-modal.active {
+    display: flex;
+}
+
+.custom-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    max-height: 100vh; /* Не больше высоты экрана */
+    overflow-y: auto; /* Внутренняя прокрутка, если не влезет */
+}
+
+/* Кнопка закрытия (крестик) */
+.custom-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.custom-close:hover {
+    color: red;
+}
+
+/* Адаптация под мобильные (чтобы влезало без прокрутки) */
+@media (max-width: 576px) {
+    .custom-modal-content {
+        max-width: 100%;
+        height: 100%; /* На весь экран */
+        border-radius: 0;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Поля по центру экрана */
+    }
+    
+    .custom-close {
+        top: 15px;
+        right: 20px;
+    }
+}
